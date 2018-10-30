@@ -1,20 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
-  mode: 'development',
-  output: {
-    filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js|jsx$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -34,7 +35,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[ext]',
+              name: 'assets/[name].[ext]',
             },
           },
         ],
@@ -46,5 +47,6 @@ module.exports = {
       template: './src/index.pug',
       filename: 'index.html',
     }),
+    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
   ],
 };

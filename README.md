@@ -1,13 +1,13 @@
 # React boilerplate
 
-A simple react-webpack boilerplate
+A simple react-webpack boilerplate using webpack 4, Babel 7 and Sass
 
 ## Getting started
 
 1. Clone or download this repository
-2. run `npm install`
-3. run `npm start`
-4. Go to https://127.0.0.1:8080 and start coding!
+2. run `yarn install`
+3. run `yarn start`
+4. Go to http://localhost:8080 (or check console for the port) and start coding!
 
 ## Contributing
 

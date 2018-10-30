@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
+import React from 'react';
 
-const App = () => (
-  <h1> hello from react!</h1>
-);
-
-export default hot(module)(App);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() { 
+    return (
+      <div>A simple webpack react boilerplate</div>
+    );
+  }
+}
+ 
+export default App;
