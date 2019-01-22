@@ -1,6 +1,6 @@
-# React Webpack Babel boilerplate
+# React Typescript Webpack starter
 
-A minimal boilerplate with hot module replacement
+> A minimal react boilerplate with typescript and hot module replacement 
 
 
 * **[React](https://facebook.github.io/react/)** (16.x)
