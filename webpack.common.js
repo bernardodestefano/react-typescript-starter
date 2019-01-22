@@ -1,9 +1,10 @@
 const path = require('path');
+const {CheckerPlugin} = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.jsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.jsx', '.js', '.json'],
   },
   context: path.resolve(__dirname, 'src'),
   module: {
@@ -11,7 +12,11 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader', 'source-map-loader'],
+      },
+      {
+        test: /\.tsx?$/,
+        use: ['babel-loader', 'awesome-typescript-loader'],
       },
       {
         test: /\.pug$/,
@@ -46,9 +51,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new CheckerPlugin(),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.pug',
+      template: 'index.html',
     }),
   ],
 };

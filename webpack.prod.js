@@ -4,7 +4,7 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
-  entry: './index.jsx',
+  entry: './index.tsx',
   devtool: 'source-map',
   output: {
     filename: 'js/bundle.[hash].min.js',

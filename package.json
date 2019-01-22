@@ -1,8 +1,8 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.1.0",
-  "description": "A minimal boilerplate with hot module replacement",
-  "main": "./src/index.js",
+  "name": "react-typescript-hrm-starter",
+  "version": "1.0.0",
+  "description": "A minimal boilerplate with typescript for react with hot module replacement",
+  "main": "./src/index.tsx",
   "scripts": {
     "start": "webpack-dev-server --config=webpack.dev.js",
     "build": "yarn run clean-dist && webpack -p --config=webpack.prod.js",
@@ -13,12 +13,17 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:bernardodestefano/react-boilerplate.git"
+    "url": ""
   },
+  "bugs": {
+    "url": "https://github.com/bernardodestefano/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/bernardodestefano/react-boilerplate#readme",
   "keywords": [
     "frontend",
     "webpack",
     "boilerplate",
+    "typescript",
     "react",
     "babel",
     "sass",
@@ -29,20 +34,21 @@
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
-    "eslint": "^5.8.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.4",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "source-map-loader": "^0.2.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^3.1.2",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
@@ -57,9 +63,5 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.23.1",
     "webpack-merge": "^4.1.4"
-  },
-  "bugs": {
-    "url": "https://github.com/bernardodestefano/react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/bernardodestefano/react-boilerplate#readme"
+  }
 }
