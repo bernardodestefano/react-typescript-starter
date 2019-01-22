@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/images/react_logo.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>A simple webpack react boilerplate</div>
+      <div className="app">
+        <img src={logo} />
+        <h1>A simple webpack react boilerplate</h1>
+      </div>
     );
   }
 }

@@ -1,25 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.jsx'),
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
   },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
+  context: path.resolve(__dirname, 'src'),
   module: {
     rules: [
       {
-        test: /\.js|jsx$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: ['babel-loader'],
       },
       {
         test: /\.pug$/,
@@ -30,23 +22,33 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|jpeg|gif|png|svg|ico)$/,
+        test: /\.css$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[name].[ext]',
-            },
-          },
+          'style-loader',
+          {loader: 'css-loader', options: {importLoaders: 1}}
+        ],
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader',
+          {loader: 'css-loader', options: {importLoaders: 1}},
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=images/[hash].[ext]',
+          'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.pug',
       filename: 'index.html',
+      template: 'index.pug',
     }),
-    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
   ],
 };
