@@ -5,11 +5,13 @@ A minimal boilerplate with hot module replacement
 
 * **[React](https://facebook.github.io/react/)** (16.x)
 * **[Webpack](https://webpack.js.org/)** (4.x)
+* **[Typescript](https://www.typescriptlang.org/)** (3.x)
 * **[Hot Module Replacement (HMR)](https://webpack.js.org/guides/hmr-react/)** using [React Hot Loader](https://github.com/gaearon/react-hot-loader) (4.x)
 * **[Babel](http://babeljs.io/)** (7.x)
 * [SASS](http://sass-lang.com/)
+* Production build script
 * Image loading/minification using [Image Webpack Loader](https://github.com/tcoopman/image-webpack-loader)
-* Code formatting using [ESlint](https://eslint.org/).
+* Code formatting using [TSlint](https://palantir.github.io/tslint/).
 
 ## Getting started
 
@@ -43,4 +45,7 @@ A minimal boilerplate with hot module replacement
 ## Contributing
 
 - Fork the project, add your feature (or fix a bug) and open a pull request OR
-- [Open](https://github.com/bernardodestefano/react-boilerplate/issues/new) an issue for bugs or feature request.
+- [Open](https://github.com/bernardodestefano/react-typescript-starter/issues/new) an issue for bugs or feature request.
+
+## See also
+* [React Webpack Babel HMR](https://github.com/bernardodestefano/react-webpack-babel-hmr)
